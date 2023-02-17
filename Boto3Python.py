@@ -1,13 +1,5 @@
-import Boto3Python
-aws_resource=Boto3Python
-bucket=aws_resource.bucket("botopythonpractice")
-response = bucket.create(
-    ACL='public-read',
-    CreateBucketConfiguration={
-        'LocationConstraint': 'us-east-2'|'us-gov-east-1'
-    },
-    
-)
-
-print(response)
-
+import boto3
+AWS_REGION = "us-east-1"
+resource = boto3.resource("s3", region_name=AWS_REGION)
+bucket_name = "Boto3PythonPractice"
+print(" s3 created")
